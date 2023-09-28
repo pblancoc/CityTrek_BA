@@ -1,6 +1,6 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     background-color: #00AEEF; /* Celeste */
     color: #FFFFFF; /* Blanco */
     margin: 0;
@@ -19,6 +19,13 @@ nav {
     justify-content: center;
 }
 
+/* header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+} */   
+
 .menu {
     list-style: none;
     padding: 0;
@@ -26,6 +33,7 @@ nav {
 
 .menu li {
     margin: 0 20px;
+    display: inline-block;
     position: relative;
 }
 
@@ -60,11 +68,22 @@ nav {
 }
 
 /* Contenido principal */
-main {
+/*.categorias {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
+} */
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
+    gap: 20px; /* Espacio entre los elementos */
+    padding: 20px;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
+    margin: 0 auto; /* Centra el contenedor en la página */
 }
 
 .category {
@@ -77,6 +96,10 @@ main {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
+}
+
+h2 {
+    color: #0033A0; /* Azul oscuro */
 }
 
 .category:hover {
