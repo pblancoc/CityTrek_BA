@@ -1,0 +1,123 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #00AEEF; /* Celeste */
+    color: #FFFFFF; /* Blanco */
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado y navegación */
+header {
+    background-color: #0033A0; /* Azul oscuro */
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 20px;
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #FFFFFF; /* Blanco */
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #00AEEF; /* Celeste */
+}
+
+/* Submenú */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #0033A0; /* Azul oscuro */
+    border: 1px solid #00AEEF; /* Celeste */
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    margin: 10px 0;
+}
+
+.submenu a {
+    color: #00AEEF; /* Celeste */
+}
+
+/* Contenido principal */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.category {
+    width: 300px;
+    background-color: #FFFFFF; /* Blanco */
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #00AEEF; /* Celeste */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.category:hover {
+    transform: scale(1.05);
+}
+
+.category img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    background-color: #0033A0; /* Azul oscuro */
+    color: #FFFFFF; /* Blanco */
+    padding: 10px;
+}
+
+/* Estilos responsivos para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .submenu {
+        position: static;
+        display: none;
+    }
+
+    .category {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
