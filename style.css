@@ -144,3 +144,39 @@ footer {
         margin: 10px 0;
     }
 }
+
+/*Botones de listado telefonos */
+button{
+    font-size: 1.15em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    color: white;
+    background-color: #0033A0;
+}
+
+button:hover{
+    background-color: rgb(101, 33, 165);
+}
+
+.listado{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.telefonos {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.telefono{
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+
