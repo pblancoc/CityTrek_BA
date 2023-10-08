@@ -17,10 +17,10 @@
                 <li><a href="index.html">Página Principal</a></li>
                 <li><a href="#">Categorías</a>
                     <ul class="submenu">
-                        <li><a href="lugares.html">Restaurantes</a></li>
-                        <li><a href="lugares.html">Museos</a></li>
-                        <li><a href="lugares.html">Bares</a></li>
-                        <li><a href="lugares.html">Clubes de Jazz</a></li>
+                        <li><a href="lugares.html?categoria=Restaurantes">Restaurantes</a></li>
+                        <li><a href="lugares.html?categoria=Museos">Museos</a></li>
+                        <li><a href="lugares.html?categoria=Bares">Bares</a></li>
+                        <li><a href="lugares.html?categoria=Club de Jazz">Clubes de Jazz</a></li>
                     </ul>
                 </li>
                 <li><a href="telefonos.html">Teléfonos Útiles</a></li>
@@ -29,17 +29,18 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <h1>Datos del lugar elegido</h1>
+    <main id="app">
+        <h1>{{ nombre }}</h1>
         <ul>
-            <li>Nombre: </li>
-            <li>Direccion: </li>
-            <li>Telefono: </li>
+            <li>Direccion: {{ dirreccion }}</li>
+            <li>Telefono: {{ telefono }}</li>
             <li>Mail: </li>
         </ul>
     </main>
     <footer>
         <p>&copy; 2023 CityTrek BA</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="datosLugar.js"></script>    
 </body>
 </html>
