@@ -17,17 +17,18 @@
 
     <main id="app">
         <h1>{{ categoria }}</h1>
-        <div>
-            <ul>
-                <li v-for="lugar in lugares" :key="lugar.id">
-                    <a :href="'datosLugar.html?id=' + lugar.id">{{ lugar.nombre }}</a>
-                </li>
-            </ul>
+        <div class="categorias">
+            <section v-for="lugar in lugares" class="category" :key="lugar.id">
+                <a :href="'datosLugar.html?id=' + lugar.id">
+                    <img :src="'img/' + lugar.id + '.jpg'" :alt="lugar.nombre">
+                    <h2>{{ lugar.nombre }}</h2>
+                </a>
+            </section>
         </div>
     </main>
 
     <div class="footer-container"></div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="lugares.js"></script>
 </body>
