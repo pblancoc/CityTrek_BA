@@ -16,9 +16,12 @@
     <main id="app">
         <h1>{{ nombre }}</h1>
         <ul>
+            <!-- Pruebo mostrar todos los datos de Contenido
             <li>Direccion: {{ dirreccion }}</li>
             <li>Telefono: {{ telefono }}</li>
             <li>Mail: </li>
+            -->
+            <li v-for="dato in datos">{{ dato.nombre }} : {{ dato.valor }}</li>
         </ul>
     </main>
 

@@ -8,10 +8,10 @@ const header = `
             <li><a href="index.html">Página Principal</a></li>
             <li><a href="#">Categorías</a>
                 <ul class="submenu">
-                    <li><a href="lugares.html?categoria=Restaurantes">Restaurantes</a></li>
+                    <li><a href="lugares.html?categoria=Gastronomia">Gastronomia</a></li>
                     <li><a href="lugares.html?categoria=Museos">Museos</a></li>
-                    <li><a href="lugares.html?categoria=Bares">Bares</a></li>
-                    <li><a href="lugares.html?categoria=Club de Jazz">Clubes de Jazz</a></li>
+                    <li><a href="lugares.html?categoria=Sitios_de_Interes">Sitios de Interes</a></li>
+                    <li><a href="lugares.html?categoria=Entretenimiento">Entretenimiento</a></li>
                 </ul>
             </li>
             <li><a href="telefonos.html">Teléfonos Útiles</a></li>

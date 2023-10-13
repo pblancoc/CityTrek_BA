@@ -16,11 +16,11 @@
     <div class="header-container"></div>
 
     <main id="app">
-        <h1>{{ categoria }}</h1>
+        <h1>{{ titulo }}</h1>
         <div class="categorias">
             <section v-for="lugar in lugares" class="category" :key="lugar.id">
                 <a :href="'datosLugar.html?id=' + lugar.id">
-                    <img :src="'img/' + lugar.id + '.jpg'" :alt="lugar.nombre">
+                    <img :src="'img/' + categoria + '/' + lugar.id + '.jpg'" :alt="lugar.nombre">
                     <h2>{{ lugar.nombre }}</h2>
                 </a>
             </section>

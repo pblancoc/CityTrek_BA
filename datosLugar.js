@@ -5,7 +5,8 @@ new Vue({
         nombre: ' ',
         telefono: ' ',
         dirreccion: ' ',
-        categoria: ' '
+        categoria: ' ',
+        datos: []
     },
     created() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -22,6 +23,7 @@ new Vue({
                 this.nombre = data.contenido[0].valor;
                 this.telefono = data.contenido[6].valor;
                 this.dirreccion = data.direccionNormalizada;
+                this.datos = data.contenido;
             })
             .catch(error => {
                 console.error('Error:', error);
