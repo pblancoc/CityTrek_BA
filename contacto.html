@@ -22,7 +22,8 @@
         </div>
 
         <div id="formulario">
-            <form action="data/show-data.html" target="_blank">
+            <!-- <form action="data/show-data.html" target="_blank"> -->
+            <form name="contacto" netlify>    
                 <fieldset>
                     <label for="contactname">Nombre</label>
                     <input size="30" type="text" name="firstname" placeholder="Escriba su nombre aquí.">
@@ -31,15 +32,17 @@
                     <label for="contactemail">Email</label>
                     <input type="text" name="contactemail" placeholder="sunombre@mail.com" id="contactemail">
                     <br><br>
+
                     <label for="contactemail">Compañía/Organización</label>
                     <input type="text" name="zipcode"
                         placeholder="La organización o compañía a la que pertenece aquí...">
                     <br><br>
+
                     <label for="comentarios">Mensaje</label> <textarea placeholder="Escriba su mensaje aquí."
                         name="comentarios" rows="5" cols="30"></textarea>
                     <br><br>
-                    <button id="validateButton">Enviar</button>
 
+                    <button id="validateButton">Enviar</button>
                 </fieldset>
             </form>
         </div>
