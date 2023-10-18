@@ -24,18 +24,13 @@ const header = `
 
 const footer = `
 <footer>
-
-<div class="redes">
-  
-  <a href="https://www.instagram.com/" target="_blank"><img src="img/insta.png" alt="Instagram"></a>
-  <a href="https://twitter.com/?lang=en" target="_blank"><img src="img/twitter.png" alt="Twitter"></a>
-  <a href="https://www.facebook.com/" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
-
+  <div class="redes">
+    <a href="https://www.instagram.com/" target="_blank"><img src="img/insta.png" alt="Instagram"></a>
+    <a href="https://twitter.com/?lang=en" target="_blank"><img src="img/twitter.png" alt="Twitter"></a>
+    <a href="https://www.facebook.com/" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
   </div>
- 
- <p>&copy; 2023 CityTrek BA</p>
-  
 
+  <p>&copy; 2023 CityTrek BA</p>
 </footer>
 `;
 

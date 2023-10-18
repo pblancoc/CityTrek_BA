@@ -15,35 +15,20 @@
 <body>
     <div class="header-container"></div>
 
-    
     <main id="app">
         <h1>{{ nombre }}</h1>
         <ul>
-            <!-- Pruebo mostrar todos los datos de Contenido
-            <li>Direccion: {{ dirreccion }}</li>
-            <li>Telefono: {{ telefono }}</li>
-            <li>Mail: </li>
-            -->
-            <li v-for="dato in datos">{{ dato.nombre }} : {{ dato.valor }}</li>
+            <li v-for="dato in datos" v-if="dato.valor ">
+                {{ dato.nombre }} : 
+                <span v-if="dato.nombre === 'E-Mail' || dato.nombre === 'Página WEB' || dato.nombre === 'Redes Sociales'" v-html="dato.valor"></span>
+                <span v-else>{{ dato.valor }}</span>
+            </li>
         </ul>
+
+        <div class="Iframemaps">
+            <iframe :src="mapa" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>   
     </main>
-
-    <div class="Iframemaps">
-
-
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.42439961876!2d-58.36796172481243!3d-34.61871395828926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a334d157024ec7%3A0xa959471cec8a69c7!2sAv.%20Alicia%20Moreau%20de%20Justo%201714%2C%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1697406590212!5m2!1sen!2sar"
-            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-    </div>
-
-
-
-
-
-
-
 
     <div class="footer-container"></div>
 

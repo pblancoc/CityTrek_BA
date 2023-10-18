@@ -200,20 +200,23 @@ footer {
 
 
 /* Estilo a Iframe de Google */
-
+/* 
 #app {
     float: left;
     margin-top: 150px;
     margin-left: 120px;
 }
+*/
 
 .Iframemaps {
-    float: right;
+    padding: 5px;
+    /*float: right;
     margin-top: 150px;
     margin-right: 150px;
     width: 700px;
-    height: 400px;
+    height: 400px;*/
 }
+
 
 
 
