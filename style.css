@@ -71,10 +71,12 @@ nav {
 
 .menu li:hover .submenu {
     display: block;
+    width: 200px;
+    text-align: left;
 }
 
 .submenu li {
-    margin: 10px 0;
+    margin: 2px 0;
 }
 
 .submenu a {
