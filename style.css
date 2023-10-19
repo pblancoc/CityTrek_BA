@@ -128,7 +128,7 @@ h2 {
 /* Datos Lugar */
 ul li {
     margin-bottom: 10px;
-    color: #0033A0;
+    /* color: #0033A0; */
     font-weight: bold;
 }
   
@@ -140,7 +140,7 @@ ul li span {
 /* Pie de página */
 footer {
     text-align: center;
-    background-color: #0033A0; /* Azul oscuro */
+    background-color: #0033a0; /* Azul oscuro */
     color: #FFFFFF; /* Blanco */
     padding: 10px;
 }
@@ -324,7 +324,26 @@ button:hover{
     margin-bottom: 40px;
 }
 
-/* Página de contacto */
+/* Boton de Whatsapp para pantallas pequeñas */
+
+@media only screen and (min-width:320px) and (max-width:768px){
+    .btn-wsp{
+        width:63px;
+        height:63px;
+        line-height: 66px;
+	}
+
+
+.redes a {
+    width:10px;
+    height:10px;
+    line-height: 10px;
+}
+
+}
+
+
+/* ----------- Página de contacto ----------- */
 #contactpage {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -378,22 +397,39 @@ fieldset {
     line-height: 150%;
 }
 
-/* Boton de Whatsapp para pantallas pequeñas */
 
 @media only screen and (min-width:320px) and (max-width:768px){
-    .btn-wsp{
-        width:63px;
-        height:63px;
-        line-height: 66px;
-	}
-
-
-.redes a {
-    width:10px;
-    height:10px;
-    line-height: 10px;
+    #title {
+        padding: 5% 0%;
+    }
+    #contactpage {
+        display: grid;
+        grid-template-columns: 1fr 0fr;
+        justify-items: center;
+        padding: 1% 1%;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+    }
+    #title {
+        grid-column: 1 / span 1;
+    }
+    
+    #formulario {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;    
+        width: 100%;
+    }
+    
+    #sidebar {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+        width: 100%;
+        text-align: center;
+    }
+#sidebar img {
+    display: none;
 }
 
 }
-
-
+/* ----------- Fin página de contacto ----------- */
