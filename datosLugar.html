@@ -20,7 +20,7 @@
         <ul>
             <li v-for="dato in datos" v-if="dato.valor ">
                 {{ dato.nombre }} : 
-                <span v-if="dato.nombre === 'E-Mail' || dato.nombre === 'Página WEB' || dato.nombre === 'Redes Sociales'" v-html="dato.valor"></span>
+                <span v-if="dato.nombre === 'E-Mail' || dato.nombre === 'E-mail' || dato.nombre === 'Página WEB' || dato.nombre === 'Redes Sociales'" v-html="dato.valor"></span>
                 <span v-else>{{ dato.valor }}</span>
             </li>
         </ul>
