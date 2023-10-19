@@ -433,3 +433,86 @@ fieldset {
 
 }
 /* ----------- Fin página de contacto ----------- */
+
+/* ------- inicio responsive navbar ------- */
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: #0033A0;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar .menu {
+display: flex;
+flex-direction: column;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+li.menu-button {
+    display: none;
+}
+
+li.subCatMobile {
+    font-size: 0.7em;
+    margin: 0px 0px 0px 20px;
+}
+
+svg {
+    fill: #fff;
+}
+
+@media(max-width: 800px) {
+    .hideOnMobile{
+        display: none !important;
+    }
+    li.menu-button {
+        display: block;
+    }
+}
+
+@media(max-width: 400px) {
+    .sidebar{
+        width: 100% !important;
+    }
+    li.menu-button {
+        display: block;
+    }
+}
+
+/* ------- fin responsive navbar ------- */
