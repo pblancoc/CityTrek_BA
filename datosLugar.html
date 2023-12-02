@@ -28,6 +28,47 @@
         <div class="Iframemaps">
             <iframe :src="mapa" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>   
+
+        <div class="comentarios-section">
+            <h2>Comentarios</h2>
+    
+            <!-- Formulario para agregar un comentario -->
+            <div class="agregar-comentario">
+                <h3 v-if="esAgregar">Agregar Comentario</h3>
+                <h3 v-else>Editar Comentario</h3>
+
+                <input type="text" v-model="nuevoComentario.usuario" placeholder="Usuario" :disabled="!esAgregar">
+                <textarea v-model="nuevoComentario.comentario" placeholder="Comentario"></textarea>
+                <input type="number" v-model="nuevoComentario.puntuacion" placeholder="Puntuación">
+
+                <!-- Botón "Agregar" -->
+                <button v-if="esAgregar" @click="enviarComentario">Agregar</button>
+                
+                <!-- Botones "Modificar" y "Cancelar" -->
+                <div v-else>
+                    <button @click="modificarComentario">Modificar</button>
+                    <button @click="cancelar">Cancelar</button>
+                </div>                
+                <hr>
+            </div>
+    
+            <!-- Lista de comentarios -->
+            <div class="lista-comentarios">
+                <div v-for="comentario in getComentarios.comentarios">
+                    <div>
+                        <strong>Usuario: {{ comentario.usuario }}</strong>
+                        <span>Fecha: {{ comentario.fecha_hora }}</span>
+                        <p>Comentario: {{ comentario.comentario }}</p>
+                        <p>Puntuación: {{ comentario.puntuacion }}</p>
+                    </div>
+                    <div>
+                        <button @click="editarComentario(comentario)">Editar</button>
+                        <button @click="eliminarComentario(comentario.id)">Eliminar</button>
+                    </div> 
+                    <hr>
+                </div>
+            </div>
+        </div>        
     </main>
 
     <div class="footer-container"></div>
