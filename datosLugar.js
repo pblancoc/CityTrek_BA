@@ -11,7 +11,7 @@ new Vue({
         mapa: 'pepe',
         esAgregar: true,
         id_edit: ' ',
-        urlAPI:'http://pblancoc.pythonanywhere.com/comentarios',
+        urlAPI:'https://pblancoc.pythonanywhere.com/comentarios',
         comentarios: [],
         getComentarios: {
             comentarios: []
@@ -51,7 +51,7 @@ new Vue({
                 headers: { 'Content-Type': 'application/json' },
                 redirect: 'follow'
             }
-            fetch('http://pblancoc.pythonanywhere.com/comentarios', options)
+            fetch('https://pblancoc.pythonanywhere.com/comentarios', options)
                 .then(function () {
                     location.reload();
                     //alert("Registro grabado")
@@ -236,7 +236,7 @@ new Vue({
             });
 
         // Realiza una solicitud a la API para comentarios
-        fetch(`http://pblancoc.pythonanywhere.com/comentarios/lugar/${itemId}`)
+        fetch(`https://pblancoc.pythonanywhere.com/comentarios/lugar/${itemId}`)
             .then(response => response.json())
             .then(data => {
                 this.getComentarios = data;
