@@ -8,124 +8,8 @@ new Vue({
         categoria: ' ',
         datos: [],
         mapas: [],
-        mapa: 'pepe',
-        esAgregar: true,
-        id_edit: ' ',
-        urlAPI:'https://pblancoc.pythonanywhere.com/comentarios',
-        comentarios: [],
-        getComentarios: {
-            comentarios: []
-        },
-        comentario: {
-            comentario: '',
-            fecha_hora: '',
-            id: 0,
-            lugar_id: '',
-            puntuacion: 0,
-            usuario: ''
-        }, 
-        nuevoComentario: {
-            comentario: '',
-            fecha_hora: '',
-            lugar_id: '',
-            puntuacion: 0,
-            usuario: ''
-        }        
+        mapa: 'pepe'
     },
-    methods: {
-        enviarComentario(){
-            const fechaHoraActual = new Date().toISOString();
-            const fechaHoraFormateada = fechaHoraActual.slice(0, -5);
-            const id_decodificado = this.id.replace('|', '%7C');
-
-            let newComentario = {
-                lugar_id: this.id,                         
-                usuario: this.nuevoComentario.usuario,     
-                fecha_hora: fechaHoraFormateada,               
-                comentario: this.nuevoComentario.comentario,    
-                puntuacion: this.nuevoComentario.puntuacion
-            }
-            var options = {
-                body:JSON.stringify(newComentario),
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                redirect: 'follow'
-            }
-            fetch('https://pblancoc.pythonanywhere.com/comentarios', options)
-                .then(function () {
-                    location.reload();
-                    //alert("Registro grabado")
-                    //window.location.href = `datosLugar.html?id=${id_decodificado}`;  // recarga productos.html
-                    //<a :href="'datosLugar.html?id=' + lugar.id">
-                    //`https://datosabiertos-catastro-apis.buenosaires.gob.ar/getObjectContent?id=${itemId}`
-                })
-                .catch(err => {
-                    console.error(err);
-                    alert("Error al Grabar")  // puedo mostrar el error tambien
-                })      
-        },
-        eliminarComentario(id) {
-            const url = this.urlAPI+'/' + id;
-            var options = {
-                method: 'DELETE',
-            }
-            fetch(url, options)
-                .then(res => res.text()) // or res.json()
-                .then(res => {
-			 alert('Registro Eliminado')
-                    location.reload(); // recarga el json luego de eliminado el registro
-                })
-        },
-        editarComentario(comentario) {
-            this.id_edit = comentario.id;
-            this.nuevoComentario.usuario = comentario.usuario;
-            this.nuevoComentario.comentario = comentario.comentario;
-            this.nuevoComentario.puntuacion = comentario.puntuacion;
-            
-            this.esAgregar = false;
-
-            // Hacer scroll hasta el div agregar-comentario
-            const agregarComentarioDiv = document.querySelector('.agregar-comentario');
-            if (agregarComentarioDiv) {
-                agregarComentarioDiv.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }            
-        },  
-        cancelar() {
-            location.reload();
-        },
-        modificarComentario() {
-            const url = this.urlAPI+'/' + this.id_edit;
-            const fechaHoraActual = new Date().toISOString();
-            const fechaHoraFormateada = fechaHoraActual.slice(0, -5);
-            console.log(url);
-            let editComentario = {
-                lugar_id: this.id,                         
-                usuario: this.nuevoComentario.usuario,     
-                fecha_hora: fechaHoraFormateada,               
-                comentario: this.nuevoComentario.comentario,    
-                puntuacion: this.nuevoComentario.puntuacion
-            }
-            console.log(editComentario);
-            var options = {
-                body: JSON.stringify(editComentario),
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                redirect: 'follow'
-            }
-            
-            fetch(url, options)
-                .then(function () {
-                    alert("Registro modificado")
-                    location.reload();          
-                })
-                .catch(err => {
-                    console.error(err);
-                    alert("Error al Modificar")
-                })      
-        }              
-    },    
     created() {
         const urlParams = new URLSearchParams(window.location.search);
         const itemId = urlParams.get('id');
@@ -234,18 +118,5 @@ new Vue({
             .catch(error => {
                 console.error('Error:', error);
             });
-
-        // Realiza una solicitud a la API para comentarios
-        fetch(`https://pblancoc.pythonanywhere.com/comentarios/lugar/${itemId}`)
-            .then(response => response.json())
-            .then(data => {
-                this.getComentarios = data;
-                this.comentarios = this.getComentarios.comentarios;
-                console.log('Comentarios:');
-                console.log(this.comentarios);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });            
     },
 });
